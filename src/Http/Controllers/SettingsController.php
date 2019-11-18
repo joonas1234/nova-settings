@@ -15,14 +15,15 @@ class SettingsController extends Controller
 
     public function index()
     {
-        $settings = config('nova.nova_settings.available_settings');
-        if(is_array($settings) && count($settings)) {
-            foreach($settings as $setting) {
-                $settings[$setting] = Setting::get($setting);
-            }            
+        $availableSettings = config('nova.nova_settings.available_settings');
+        $settings = [];
+
+        if(is_array($availableSettings) && count($availableSettings)) {
+            foreach($availableSettings as $setting) {$settings[$setting] = Setting::get($setting);}            
         } else {
             $settings = Setting::all();
         }
+        
         return $settings;
     }
 
