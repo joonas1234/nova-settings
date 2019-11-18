@@ -1,0 +1,38 @@
+{
+    "name": "joonas1234/nova-settings",
+    "description": "Laravel Settings in Nova",
+    "keywords": [
+        "laravel",
+        "nova",
+        "settings"
+    ],
+    "authors": [
+        {
+            "name": "Joonas Kämäräinen",
+            "email": "joo.kamarainen@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "anlutro/l4-settings": "^0.9.1"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Joonas1234\\NovaSettings\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Joonas1234\\NovaSettings\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
